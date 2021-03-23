@@ -47,7 +47,7 @@ body {
   position: absolute;
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 60%;
   height: 100%;
   outline: none;
   opacity: 0;
@@ -167,17 +167,21 @@ h4 {
 }
 
 .upload-text {
-    width: 58%;
-    font-size: 1.5rem;
-
+    width: 70%;
+    font-size: 1.3rem;
     line-height: 1.53;
     text-align: center;
     color: #286cc5;
     margin: 0 auto;
 }
 
+img {
+    width: 40%;
+    height: 20%;
+}
 
-.container {
+
+/* .container {
   align-items: center;
   justify-content: center;
-}
+} */
