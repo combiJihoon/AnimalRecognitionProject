@@ -116,7 +116,7 @@ body {
 
 .image-dropping,
 .remove-image:hover {
-  background: #c13b2a;
+  background: #a1c3f0;
   color: #ffffff;
   transition: all .2s ease;
   cursor: pointer;
@@ -197,3 +197,16 @@ img {
   align-content: center;
 } */
 
+.result-message {
+	font-size: 40;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.label-container {
+	font-size: 20;
+}
+
+.remove-image {
+	margin-top: 50px;
+}

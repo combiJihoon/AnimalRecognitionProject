@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body><!DOCTYPE html>
+<html>
 
 <head>
 	<!-- Required meta tags -->
@@ -76,13 +81,31 @@
             </div>
 
         </div>
-        <div class="file-upload-content">
+        <!-- <div class="file-upload-content">
             <img class="file-upload-image" id="animal-image" src="#" alt="your image" />
             <p class="result-message"></p>
             <div id="label-container"></div>
             <div class="image-title-wrap">
-                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span
-                        class="image-title">Uploaded Image</span></button>
+                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span>
+								</button>
+            </div>
+        </div> -->
+				<div class="file-upload-content">
+            <img class="file-upload-image" id="animal-image" src="#" alt="your image" />
+            <div id="loading" class="animated bounce">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p class="text-center">AI가 당신의 동물상을 분석중입니다.</p>
+            </div>
+            <p class="result-message"></p>
+            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+            <div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
+
+            <div class="pt-3 image-title-wrap">
+                <button type="button p-2" class="try-again-btn" onclick="window.location.reload();">
+                    <span class="try-again-text">다른 사진으로 재시도</span>
+                </button>
             </div>
         </div>
 
@@ -105,6 +128,7 @@
 
                 reader.onload = function (e) {
                     $('.image-upload-wrap').hide();
+										$('#loading').show();
                     $('.file-upload-image').attr('src', e.target.result);
                     $('.file-upload-content').show();
                     $('.image-title').html(input.files[0].name);
@@ -114,6 +138,7 @@
                 init().then(() => {
                     console.log("hello");
                     predict();
+										$('#loading').hide();
                 });
                 // 모델을 불러오는 데 시간이 조금 걸림 -> 따라서 모델 불러오는 동안 predict가 실행되어서는 안됨
                 // 따라서 async - await 를 이용해 "promise"를 사용해야 함 
